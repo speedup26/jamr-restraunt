@@ -220,17 +220,22 @@
       <p style="font-size: 0.88rem; color: var(--text-muted);">وجه كاميرا الموبايل لمسح الكود وفتح موقع ومنيو مطعم جمر فوراً</p>
 
       <div class="qr-frame">
-        <div id="live-qr"></div>
+        <div id="live-qr">
+          <img src="assets/images/jamr-qr-code.png" alt="كود QR مطعم جمر" style="width: 200px; height: 200px; display: block; margin: 0 auto; background: #ffffff; border-radius: 8px;">
+        </div>
       </div>
 
       <div class="form-group" style="margin-top: 0.5rem; text-align: right;">
         <label style="font-size: 0.8rem; color: var(--text-muted);">رابط الويب سايت المشفر في الكود:</label>
-        <input type="text" id="qr-custom-url" class="form-input" style="font-size: 0.82rem; padding: 0.5rem;" dir="ltr">
+        <input type="text" id="qr-custom-url" class="form-input" style="font-size: 0.82rem; padding: 0.5rem;" dir="ltr" value="https://jamr-restraunt-bs5m.vercel.app" readonly>
       </div>
 
-      <div class="qr-actions-row">
-        <button class="btn-qr-action btn-qr-download" onclick="downloadQR()">
-          <i class="fas fa-download"></i> تحميل كارت QR للطباعة
+      <div class="qr-actions-row" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+        <button class="btn-qr-action btn-qr-download" onclick="downloadQR('png')">
+          <i class="fas fa-file-image"></i> تحميل صورة PNG
+        </button>
+        <button class="btn-qr-action btn-qr-download" onclick="downloadQR('svg')">
+          <i class="fas fa-vector-square"></i> تحميل فيكتور SVG للمطبعة
         </button>
         <button class="btn-qr-action btn-qr-print" onclick="printQR()">
           <i class="fas fa-print"></i> طباعة كارت الطاولة

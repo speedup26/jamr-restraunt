@@ -237,41 +237,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================================================
-// QR CODE GENERATOR & MODAL LOGIC
+// QR CODE MODAL & DOWNLOAD LOGIC
 // ============================================================================
-let qrInstance = null;
-
 function initQRCodeModal() {
-  const currentUrl = window.location.href.split('#')[0];
   const qrContainer = document.getElementById('live-qr');
-
-  if (qrContainer && typeof QRCode !== 'undefined') {
-    qrContainer.innerHTML = '';
-    qrInstance = new QRCode(qrContainer, {
-      text: currentUrl.startsWith('file://') ? 'https://maps.app.goo.gl/KUog1AhFCSzEQLdx9' : currentUrl,
-      width: 200,
-      height: 200,
-      colorDark: '#080a0d',
-      colorLight: '#ffffff'
-    });
+  if (qrContainer) {
+    qrContainer.innerHTML = `
+      <img src="assets/images/jamr-qr-code.png" alt="كود QR مطعم جمر" style="width: 220px; height: 220px; display: block; margin: 0 auto; background: #ffffff; padding: 10px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+    `;
   }
 
   const urlInput = document.getElementById('qr-custom-url');
   if (urlInput) {
-    urlInput.value = currentUrl.startsWith('file://') ? 'https://maps.app.goo.gl/KUog1AhFCSzEQLdx9' : currentUrl;
-    urlInput.addEventListener('input', (e) => {
-      const newUrl = e.target.value.trim() || currentUrl;
-      if (qrContainer && typeof QRCode !== 'undefined') {
-        qrContainer.innerHTML = '';
-        qrInstance = new QRCode(qrContainer, {
-          text: newUrl,
-          width: 200,
-          height: 200,
-          colorDark: '#080a0d',
-          colorLight: '#ffffff'
-        });
-      }
-    });
+    urlInput.value = 'https://jamr-restraunt-bs5m.vercel.app';
+    urlInput.readOnly = true;
   }
 }
 
@@ -291,11 +270,10 @@ function printQR() {
   window.print();
 }
 
-function downloadQR() {
-  // Download the ready-to-print SVG file
+function downloadQR(format = 'png') {
   const a = document.createElement('a');
-  a.href = 'assets/images/jamr-qr-code.svg';
-  a.download = 'jamr-restaurant-qr-code.svg';
+  a.href = format === 'svg' ? 'assets/images/jamr-qr-code.svg' : 'assets/images/jamr-qr-code.png';
+  a.download = `jamr-restaurant-qr.${format === 'svg' ? 'svg' : 'png'}`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
