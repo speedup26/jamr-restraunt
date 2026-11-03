@@ -58,11 +58,16 @@ function generate(url, filename) {
 
   <!-- Bottom Info -->
   <text x="300" y="680" font-family="'Cairo', sans-serif, Arial" font-size="22" font-weight="800" fill="#ffffff" text-anchor="middle">فرع قليوب • دليفري: 010 1612 1744</text>
-  <text x="300" y="715" font-family="'Cairo', sans-serif, Arial" font-size="16" font-weight="600" fill="#94a3b8" text-anchor="middle">أصالة المشويات على الفحم الحقيقي</text>
+  <text x="300" y="715" font-family="'Cairo', sans-serif, Arial" font-size="16" font-weight="600" fill="#ffb703" text-anchor="middle">jamr-restraunt-bs5m.vercel.app</text>
 </svg>`;
 
   fs.writeFileSync(filename, svg, 'utf8');
   console.log('Generated successfully:', filename);
+
+  // Also copy to artifact dir so user can preview it directly
+  const artifactPath = 'C:/Users/CompuMarts/.gemini/antigravity/brain/65824958-0c63-49ca-bda2-3c4f77e67c0c/jamr-qr-code.svg';
+  fs.writeFileSync(artifactPath, svg, 'utf8');
+  console.log('Saved to artifact path');
 }
 
-generate('https://maps.app.goo.gl/KUog1AhFCSzEQLdx9', path.join(__dirname, '../assets/images/jamr-qr-code.svg'));
+generate('https://jamr-restraunt-bs5m.vercel.app', path.join(__dirname, '../assets/images/jamr-qr-code.svg'));
