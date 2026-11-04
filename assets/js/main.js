@@ -11,55 +11,55 @@ const RESTAURANT_WHATSAPP = '201016121744';
 const RESTAURANT_LOCATION = 'قليوب، محافظة القليوبية';
 const RESTAURANT_MAP_URL = 'https://maps.app.goo.gl/KUog1AhFCSzEQLdx9';
 
-// 6 Core Specialities
+// 6 Core Specialities (Turkish Grills & Gourmet Fast Food: Crepe, Burger, Pasta)
 const categoriesData = [
   {
-    id: 'grills',
-    nameAr: 'مشويات الفحم الملكية (Specialities)',
-    nameEn: 'Royal Charcoal Grills',
-    icon: 'fa-fire',
-    badge: 'تخصص 5 نجوم ⭐',
-    desc: 'كباب جمر الملكي، أوصال لحم ضأن وعجل بلدي طازج يومياً، ريش مشوية على فحم السنديان الطبيعي، وشيش طاووق مدخن بأعلى معايير الجودة.'
+    id: 'turkish-grills',
+    nameAr: 'المشويات التركية على الجمر (Turkish Grills)',
+    nameEn: 'Authentic Turkish Charcoal Grills',
+    icon: 'fa-fire-flame-curved',
+    badge: 'تخصص تركي أصيل ⭐',
+    desc: 'كباب أضنة وأورفا على الأسياخ التركية العريضة، شيش طاووق تركي بتتبيلة الزبادي والأعشاب، كفتة تركية مشوية على الفحم، أوصال وريش ضأن وعجل بلدي طازج على فحم السنديان الطبيعي.'
   },
   {
-    id: 'steaks-meats',
-    nameAr: 'لحوم وستيك جمر الخاصة',
-    nameEn: 'Prime Cuts & Steaks',
-    icon: 'fa-drumstick-bite',
-    badge: 'لحوم بلدي طازجة',
-    desc: 'قطع لحم بلدي مختارة بعناية فائقة ومسفوعة على شبك الجمر الساخن مع الزبدة والأعشاب ونكهة الحطب الطبيعي الساحرة.'
+    id: 'crepes',
+    nameAr: 'كريب جمر الحادق والفاخر (Crepes)',
+    nameEn: 'Gourmet Crispy Crepes',
+    icon: 'fa-scroll',
+    badge: 'قرمشة وحشوات غنية 🔥',
+    desc: 'كريب جمر المقرمش بأشهى الحشوات: كريب كرسبي زنجر، كريب شاورما فراخ ولحم، كريب كفتة وسجق إسكندراني بلدي، كريب فاهيتا، وكريب مكس لحوم وجبن موتزاريلا سايحة وغنية.'
+  },
+  {
+    id: 'burgers',
+    nameAr: 'برجر جمر المشوي على الفحم (Burgers)',
+    nameEn: 'Charcoal & Smash Flame Burgers',
+    icon: 'fa-burger',
+    badge: 'لحم بلدي 100% صوصات خاصة 🍔',
+    desc: 'برجر لحم بلدي طازج مسفوع بنكهة الجمر المدخن، سنجل ودبل مع صوصات جمر الخاصة، جبنة شيدر كريمية ذائبة، حلقات بصل مقرمشة، وبرجر تشيكن كرسبي سوبريم في خبز بريوش طازج.'
+  },
+  {
+    id: 'pastas',
+    nameAr: 'باستا جمر الإيطالية الفاخرة (Pastas)',
+    nameEn: 'Artisanal Pastas & Oven Dishes',
+    icon: 'fa-plate-wheat',
+    badge: 'وايت صوص ومكس جبن 🧀',
+    desc: 'باستا وايت صوص كريمية (ألفريدو) بقطع الدجاج المشوي والمشروم، باستا ريد صوص إيطالية بالأعشاب، باستا مكس صوص بينك، وطواجن مكرونة فرن بجبنة الموتزاريلا واللحوم البلدية الساخنة.'
   },
   {
     id: 'family-platters',
-    nameAr: 'صواني ومشاركات جمر VIP',
-    nameEn: 'VIP Family Feasts',
+    nameAr: 'صواني وعزومات جمر التركية VIP',
+    nameEn: 'VIP Turkish Family Feasts',
     icon: 'fa-crown',
-    badge: 'صواني الملوك',
-    desc: 'صواني مشويات مشكلة عملاقة للعائلات والمناسبات الفاخرة، تقدم مع الأرز البسمتي بالخلطة والمكسرات والمقبلات والخبز الطازج.'
+    badge: 'صواني الملوك واللمة 👑',
+    desc: 'صواني مشويات تركية مشكلة عملاقة تجمع الكباب والشيش والأوصال، مع أرز بسمتي بالخلطة والمكسرات، الخبز التركي الطازج، صوصات الشواء، والمقبلات المتنوعة للعائلات والعزومات الفاخرة.'
   },
   {
-    id: 'sandwiches-burgers',
-    nameAr: 'ساندوتشات وبيرجر جمر المدخن',
-    nameEn: 'Smoked Gourmet Sandwiches',
-    icon: 'fa-burger',
-    badge: 'شواء فوري',
-    desc: 'ساندوتشات كباب وكفتة على الفحم في خبز طازج، وبيرجر لحم مدخن بالجبنة الذائبة وصوصات جمر الحصرية.'
-  },
-  {
-    id: 'appetizers',
-    nameAr: 'مقبلات وسلطات شرقية فاخرة',
-    nameEn: 'Artisanal Appetizers & Salads',
+    id: 'appetizers-sides',
+    nameAr: 'المقبلات، السلطات والبطاطس المقرمشة',
+    nameEn: 'Turkish Mezze, Fries & Salads',
     icon: 'fa-bowl-food',
-    badge: 'طازجة مع كل طلب',
-    desc: 'حمص كريمي باللحمة والصنوبر، طحينة مدخنة، بابا غنوج على الحطب، سلطات بلدي وخضراء طازجة، وثومية مميزة.'
-  },
-  {
-    id: 'drinks-desserts',
-    nameAr: 'مشروبات وحلويات جمر المنعشة',
-    nameEn: 'Beverages & Sweets',
-    icon: 'fa-glass-water',
-    badge: 'ضيافة ملكية',
-    desc: 'شاي على الفحم والنعناع برائحة الحطب، حلويات شرقية ومشروبات باردة منعشة تناسب أشهى وجبات المشويات.'
+    badge: 'طازجة مع كل طلب 🍟',
+    desc: 'بطاطس مقلية كرسبي مع صوص الشيدر السايح، سلطة تركية حارة (إيزميه)، بابا غنوج على الحطب، طحينة جمر المدخنة، تومية كريمية، كول سلو منعش، ومشروبات باردة مثلجة.'
   }
 ];
 
