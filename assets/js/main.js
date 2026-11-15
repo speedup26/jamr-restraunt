@@ -8,7 +8,7 @@
 
 const RESTAURANT_PHONE = '01016121744';
 const RESTAURANT_WHATSAPP = '201016121744';
-const RESTAURANT_LOCATION = 'قليوب، محافظة القليوبية';
+const RESTAURANT_LOCATION = 'قليوب — أمام مستشفى قليوب • أسفل كافيه موكا';
 const RESTAURANT_MAP_URL = 'https://maps.app.goo.gl/KUog1AhFCSzEQLdx9';
 
 // 6 Core Specialities (Turkish Grills & Gourmet Fast Food: Crepe, Burger, Pasta)
@@ -39,11 +39,11 @@ const categoriesData = [
   },
   {
     id: 'pastas',
-    nameAr: 'باستا جمر الإيطالية الفاخرة (Pastas)',
-    nameEn: 'Artisanal Pastas & Oven Dishes',
+    nameAr: 'منيو باستا جمر الإيطالي — علبة جمر (Pastas)',
+    nameEn: 'Artisanal Italian Pastas in Jamr Box',
     icon: 'fa-plate-wheat',
-    badge: 'وايت صوص ومكس جبن 🧀',
-    desc: 'باستا وايت صوص كريمية (ألفريدو) بقطع الدجاج المشوي والمشروم، باستا ريد صوص إيطالية بالأعشاب، باستا مكس صوص بينك، وطواجن مكرونة فرن بجبنة الموتزاريلا واللحوم البلدية الساخنة.'
+    badge: 'من 95 إلى 210 ج.م • 4 صوصات 🧀',
+    desc: 'باستا إيطالي أصلي مش بشاميل في علبة جمر: باستا خضار (95 ج)، سجق بلدي مشوي (125 ج)، فراخ 150 جم (145 ج)، بسطرمة بلدي (150 ج)، سويت تشيلي (155 ج)، جمبري طازج (185 ج)، وسي فود ملوكي (210 ج). مع 4 صوصات تختار منها مجاناً.'
   },
   {
     id: 'family-platters',
@@ -62,6 +62,127 @@ const categoriesData = [
     desc: 'بطاطس مقلية كرسبي مع صوص الشيدر السايح، سلطة تركية حارة (إيزميه)، بابا غنوج على الحطب، طحينة جمر المدخنة، تومية كريمية، كول سلو منعش، ومشروبات باردة مثلجة.'
   }
 ];
+
+// ============================================================================
+// FEATURED PASTA MENU DATA (JAMR PASTA - META AI SHARED SPECIFICATION)
+// ============================================================================
+const pastaSaucesData = [
+  { id: 'white', num: '01', name: 'وايت صوص', desc: 'كريمة غنية وجبنة' },
+  { id: 'red', num: '02', name: 'ريد صوص', desc: 'طماطم وريحان إيطالي' },
+  { id: 'pink', num: '03', name: 'بينك صوص', desc: 'ميكس وايت + ريد' },
+  { id: 'espagnole', num: '04', name: 'اسبانيول', desc: 'صوص بني مدخن' }
+];
+
+const pastaDishesData = [
+  {
+    id: 'pasta-veg',
+    name: 'باستا خضار',
+    desc: 'خضار مشوي، صوص من اختيارك',
+    price: 95,
+    tag: 'خفيف ومنعش'
+  },
+  {
+    id: 'pasta-sogok',
+    name: 'باستا سجق',
+    desc: 'سجق بلدي مشوي ع الفحم',
+    price: 125,
+    tag: 'الأكثر طلباً 🔥'
+  },
+  {
+    id: 'pasta-chicken',
+    name: 'باستا فراخ',
+    desc: '150 جم فراخ مشوية',
+    price: 145,
+    tag: '150 جم بروتين 💪'
+  },
+  {
+    id: 'pasta-pastrami',
+    name: 'باستا بسطرمة',
+    desc: 'بسطرمة بلدي، صوص من اختيارك',
+    price: 150,
+    tag: 'بسطرمة بلدي (جديد ⭐)'
+  },
+  {
+    id: 'pasta-sweet-chilli',
+    name: 'باستا فراخ سويت تشيلي',
+    desc: '150 جم فراخ مشوية، صوص سويت تشيلي حلو وحار',
+    price: 155,
+    tag: 'حلو وحار 🌶️'
+  },
+  {
+    id: 'pasta-shrimp',
+    name: 'باستا جمبري',
+    desc: 'جمبري مشوي طازج',
+    price: 185,
+    tag: 'من البحر طازة 🦐'
+  },
+  {
+    id: 'pasta-seafood',
+    name: 'باستا سي فود',
+    desc: 'جمبري + سبيط + كابوريا',
+    price: 210,
+    tag: 'الطبق الملكي 👑'
+  }
+];
+
+function renderPastaMenu() {
+  const saucesContainer = document.getElementById('sauces-grid');
+  if (saucesContainer) {
+    saucesContainer.innerHTML = pastaSaucesData.map(s => `
+      <div class="sauce-card">
+        <div class="sauce-num">${s.num}</div>
+        <div class="sauce-info">
+          <h5>${s.name}</h5>
+          <p>${s.desc}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  const dishesContainer = document.getElementById('pasta-dishes-grid');
+  if (dishesContainer) {
+    dishesContainer.innerHTML = pastaDishesData.map(dish => `
+      <div class="pasta-card" data-dish-id="${dish.id}">
+        <div>
+          <div class="pasta-card-top">
+            <span class="pasta-tag">${dish.tag}</span>
+            <div class="pasta-price-badge">${dish.price} <span>ج.م</span></div>
+          </div>
+          <h4 class="pasta-title">${dish.name}</h4>
+          <p class="pasta-desc">${dish.desc}</p>
+          
+          <div class="pasta-sauce-select-row">
+            <label><i class="fas fa-blender"></i> اختار الصوص المفضل (مجاناً):</label>
+            <select class="pasta-sauce-dropdown" id="sauce-select-${dish.id}">
+              <option value="وايت صوص (كريمة وجبنة)" selected>01. وايت صوص (كريمة وجبنة)</option>
+              <option value="ريد صوص (طماطم وريحان)">02. ريد صوص (طماطم وريحان)</option>
+              <option value="بينك صوص (ميكس وايت + ريد)">03. بينك صوص (ميكس وايت + ريد)</option>
+              <option value="اسبانيول (صوص بني مدخن)">04. اسبانيول (صوص بني مدخن)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-order-pasta-item" onclick="orderPastaDirect('${dish.id}', '${dish.name}', ${dish.price})">
+          <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
+        </button>
+      </div>
+    `).join('');
+  }
+}
+
+function orderPastaDirect(dishId, dishName, price) {
+  const sauceSelect = document.getElementById(`sauce-select-${dishId}`);
+  const chosenSauce = sauceSelect ? sauceSelect.value : 'وايت صوص';
+  
+  const msg = `مرحباً مطعم جمر (قليوب)، أود طلب باستا إيطالي:\n` +
+              `🍝 *الطبق:* ${dishName}\n` +
+              `🧀 *الصوص المختار:* ${chosenSauce}\n` +
+              `💰 *السعر:* ${price} جنيه مصري\n` +
+              `يرجى تأكيد الاستلام والتوصيل في قليوب.`;
+              
+  const waUrl = `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
+}
 
 // ============================================================================
 // EMBER CANVAS
@@ -162,6 +283,14 @@ function renderCategories() {
 
 // Pre-fill selection
 function selectCategoryForOrder(categoryName) {
+  if (categoryName && categoryName.includes('باستا')) {
+    const pastaSection = document.getElementById('pasta-menu');
+    if (pastaSection) {
+      pastaSection.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+  }
+
   const orderInput = document.getElementById('order-items-input');
   const orderSection = document.getElementById('order');
   
@@ -231,6 +360,7 @@ function setupStickyHeader() {
 document.addEventListener('DOMContentLoaded', () => {
   initEmberCanvas();
   renderCategories();
+  renderPastaMenu();
   setupStickyHeader();
 
   document.getElementById('whatsapp-direct-form')?.addEventListener('submit', handleWhatsAppOrder);

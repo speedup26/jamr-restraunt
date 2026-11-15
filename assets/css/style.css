@@ -1352,3 +1352,280 @@ button, input, select, textarea {
   border-color: var(--fire-gold);
   color: var(--fire-gold);
 }
+
+/* ===================================================================
+   FEATURED PASTA MENU SECTION (منيو باستا جمر الإيطالي)
+   =================================================================== */
+.pasta-menu-wrapper {
+  margin: 3.5rem 0;
+  padding: 2.5rem 1.8rem;
+  background: linear-gradient(145deg, rgba(21, 25, 34, 0.95), rgba(13, 16, 22, 0.98));
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 183, 3, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.pasta-menu-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--fire-gold), var(--fire-orange), transparent);
+}
+
+.pasta-header-box {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+}
+
+.pasta-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 87, 34, 0.12);
+  border: 1px solid rgba(255, 87, 34, 0.35);
+  color: var(--fire-gold);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.pasta-header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.pasta-header-desc {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Sauces Bar */
+.sauces-bar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--fire-gold);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.sauces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.8rem;
+}
+
+.sauce-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 183, 3, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.sauce-card:hover {
+  background: rgba(255, 183, 3, 0.08);
+  border-color: var(--fire-gold);
+  transform: translateY(-2px);
+}
+
+.sauce-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fire-orange), #d62828);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.4);
+}
+
+.sauce-info h5 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+}
+
+.sauce-info p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Pasta Dishes Grid */
+.pasta-dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+}
+
+.pasta-card {
+  background: rgba(16, 20, 27, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.pasta-card:hover {
+  border-color: var(--fire-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 183, 3, 0.15);
+  background: rgba(24, 29, 39, 0.95);
+}
+
+.pasta-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  gap: 0.5rem;
+}
+
+.pasta-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--fire-gold);
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+}
+
+.pasta-price-badge {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(255, 87, 34, 0.2), rgba(255, 183, 3, 0.2));
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.pasta-price-badge span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fire-gold);
+  margin-right: 0.2rem;
+}
+
+.pasta-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.pasta-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.pasta-sauce-select-row {
+  margin-bottom: 1.2rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pasta-sauce-select-row label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--fire-gold);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.pasta-sauce-dropdown {
+  width: 100%;
+  background: #0d1017;
+  color: #fff;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.pasta-sauce-dropdown:focus {
+  border-color: var(--fire-orange);
+}
+
+.btn-order-pasta-item {
+  width: 100%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.btn-order-pasta-item:hover {
+  background: linear-gradient(135deg, #1ebd5b, #0d7366);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+@media (max-width: 768px) {
+  .pasta-menu-wrapper {
+    padding: 1.8rem 1rem;
+  }
+  .pasta-header-title {
+    font-size: 1.6rem;
+  }
+  .sauces-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pasta-dishes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sauces-grid {
+    grid-template-columns: 1fr;
+  }
+}
