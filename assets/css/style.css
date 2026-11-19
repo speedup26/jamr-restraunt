@@ -1629,3 +1629,505 @@ button, input, select, textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===================================================================
+   QUICK JUMP NAVIGATION BAR (MENU TABS)
+   =================================================================== */
+.quick-jump-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(21, 25, 34, 0.7);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  border-radius: 50px;
+  max-width: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.quick-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.quick-jump-btn:hover {
+  background: rgba(255, 87, 34, 0.2);
+  border-color: var(--fire-orange);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.quick-jump-btn.active {
+  background: linear-gradient(135deg, var(--fire-orange), #d62828);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.35);
+}
+
+/* ===================================================================
+   FEATURED BURGERS MENU SECTION (منيو برجر جمر)
+   =================================================================== */
+.burger-menu-wrapper {
+  margin: 3.5rem 0;
+  padding: 2.5rem 1.8rem;
+  background: linear-gradient(145deg, rgba(21, 25, 34, 0.95), rgba(13, 16, 22, 0.98));
+  border: 1px solid rgba(255, 87, 34, 0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 87, 34, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.burger-menu-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--fire-orange), var(--fire-gold), transparent);
+}
+
+.burger-header-box {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+}
+
+.burger-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 87, 34, 0.12);
+  border: 1px solid rgba(255, 87, 34, 0.35);
+  color: var(--fire-gold);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.burger-header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.burger-header-desc {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.burger-category-block {
+  margin-bottom: 2.8rem;
+}
+
+.burger-category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.burger-cat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fire-orange), #d62828);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
+}
+
+.burger-cat-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.burger-cat-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.burgers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+}
+
+.burger-card {
+  background: rgba(16, 20, 27, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.burger-card:hover {
+  border-color: var(--fire-orange);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 87, 34, 0.2);
+  background: rgba(24, 29, 39, 0.95);
+}
+
+.burger-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.burger-no {
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--fire-orange);
+  background: rgba(255, 87, 34, 0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 87, 34, 0.25);
+}
+
+.burger-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--fire-gold);
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+}
+
+.burger-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.burger-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.burger-prices-box {
+  margin-bottom: 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.burger-prices-label {
+  font-size: 0.78rem;
+  color: var(--fire-gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.burger-prices-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.burger-price-chip {
+  flex: 1;
+  min-width: 75px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.burger-price-chip:hover {
+  background: rgba(255, 87, 34, 0.2);
+  border-color: var(--fire-orange);
+  transform: translateY(-2px);
+}
+
+.chip-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.chip-value {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.chip-value sub {
+  font-size: 0.68rem;
+  color: var(--fire-gold);
+  font-weight: 700;
+}
+
+.btn-order-burger {
+  width: 100%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.btn-order-burger:hover {
+  background: linear-gradient(135deg, #1ebd5b, #0d7366);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+/* ===================================================================
+   FEATURED CREPES MENU SECTION (منيو كريب جمر)
+   =================================================================== */
+.crepe-menu-wrapper {
+  margin: 3.5rem 0;
+  padding: 2.5rem 1.8rem;
+  background: linear-gradient(145deg, rgba(21, 25, 34, 0.95), rgba(13, 16, 22, 0.98));
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 183, 3, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.crepe-menu-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--fire-gold), var(--fire-orange), transparent);
+}
+
+.crepe-header-box {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+}
+
+.crepe-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  color: var(--fire-gold);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.crepe-header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.crepe-header-desc {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.crepe-free-addons-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(255, 183, 3, 0.08);
+  border: 1px dashed rgba(255, 183, 3, 0.4);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.crepe-free-addons-banner i {
+  color: var(--fire-gold);
+  font-size: 1.1rem;
+}
+
+.crepes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.crepe-card {
+  background: rgba(16, 20, 27, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.crepe-card:hover {
+  border-color: var(--fire-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 183, 3, 0.15);
+  background: rgba(24, 29, 39, 0.95);
+}
+
+.crepe-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  gap: 0.4rem;
+}
+
+.crepe-no-badge {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: var(--fire-gold);
+  background: rgba(255, 183, 3, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+}
+
+.crepe-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fire-orange);
+  background: rgba(255, 87, 34, 0.12);
+  border: 1px solid rgba(255, 87, 34, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+}
+
+.crepe-price-badge {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(255, 183, 3, 0.2), rgba(255, 87, 34, 0.2));
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.crepe-price-badge span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fire-gold);
+}
+
+.crepe-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.crepe-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.btn-order-crepe {
+  width: 100%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.btn-order-crepe:hover {
+  background: linear-gradient(135deg, #1ebd5b, #0d7366);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+@media (max-width: 768px) {
+  .burger-menu-wrapper,
+  .crepe-menu-wrapper {
+    padding: 1.8rem 1rem;
+  }
+  .burger-header-title,
+  .crepe-header-title {
+    font-size: 1.6rem;
+  }
+  .burgers-grid,
+  .crepes-grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-jump-nav {
+    border-radius: var(--radius-md);
+  }
+}

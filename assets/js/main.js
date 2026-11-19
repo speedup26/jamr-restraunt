@@ -22,20 +22,20 @@ const categoriesData = [
     desc: 'كباب أضنة وأورفا على الأسياخ التركية العريضة، شيش طاووق تركي بتتبيلة الزبادي والأعشاب، كفتة تركية مشوية على الفحم، أوصال وريش ضأن وعجل بلدي طازج على فحم السنديان الطبيعي.'
   },
   {
-    id: 'crepes',
-    nameAr: 'كريب جمر الحادق والفاخر (Crepes)',
-    nameEn: 'Gourmet Crispy Crepes',
-    icon: 'fa-scroll',
-    badge: 'قرمشة وحشوات غنية 🔥',
-    desc: 'كريب جمر المقرمش بأشهى الحشوات: كريب كرسبي زنجر، كريب شاورما فراخ ولحم، كريب كفتة وسجق إسكندراني بلدي، كريب فاهيتا، وكريب مكس لحوم وجبن موتزاريلا سايحة وغنية.'
-  },
-  {
     id: 'burgers',
-    nameAr: 'برجر جمر المشوي على الفحم (Burgers)',
+    nameAr: 'منيو برجر جمر ع الفحم • سماش (Burgers)',
     nameEn: 'Charcoal & Smash Flame Burgers',
     icon: 'fa-burger',
-    badge: 'لحم بلدي 100% صوصات خاصة 🍔',
-    desc: 'برجر لحم بلدي طازج مسفوع بنكهة الجمر المدخن، سنجل ودبل مع صوصات جمر الخاصة، جبنة شيدر كريمية ذائبة، حلقات بصل مقرمشة، وبرجر تشيكن كرسبي سوبريم في خبز بريوش طازج.'
+    badge: '١٧ صنف • سنجل ودبل وتريبل 🍔',
+    desc: 'برجر لحم بلدي طازج وسماش ع الفحم، كلاسيك بيكون، تشامبيون برجر، برجر طرب، فاير جمر، تشكن جريلد، وفرايد كلاسيك مع صوصات جمر الخاصة.'
+  },
+  {
+    id: 'crepes',
+    nameAr: 'منيو كريب جمر المقرمش (Crepes)',
+    nameEn: 'Gourmet Crispy Crepes',
+    icon: 'fa-scroll',
+    badge: '١٣ صنف • حشوات غنية 🔥',
+    desc: 'كريب مقرمش غني بالموتزاريلا والصوصات: كريب استيك، كريب ديناميت، كريب جمر الحراق، كريب مسحب، كريب شاورما، وكريب مكس لحوم وجبن.'
   },
   {
     id: 'pastas',
@@ -60,6 +60,250 @@ const categoriesData = [
     icon: 'fa-bowl-food',
     badge: 'طازجة مع كل طلب 🍟',
     desc: 'بطاطس مقلية كرسبي مع صوص الشيدر السايح، سلطة تركية حارة (إيزميه)، بابا غنوج على الحطب، طحينة جمر المدخنة، تومية كريمية، كول سلو منعش، ومشروبات باردة مثلجة.'
+  }
+];
+
+// ============================================================================
+// FEATURED CREPES MENU DATA (JAMR CREPES - META AI SHARED SPECIFICATION)
+// ============================================================================
+const crepesData = [
+  { id: 'cr-1', no: '٠١', name: 'كريب بطاطس', price: 65, desc: 'بطاطس، موزاريلا، كاتشب + مايونيز', tag: 'اقتصادي ولذيذ' },
+  { id: 'cr-2', no: '٠٢', name: 'كريب مكس جبن', price: 105, desc: 'موزاريلا، رومي، ريكفورد، أمريكان تشيز، كيري', tag: 'مكس أجبان غني 🧀' },
+  { id: 'cr-3', no: '٠٣', name: 'كريب هوت دوج', price: 100, desc: 'هوت دوج، موزاريلا، كاتشب + مستردة', tag: 'كلاسيك' },
+  { id: 'cr-4', no: '٠٤', name: 'كريب شيش مشوي ع الفحم', price: 130, desc: 'شيش فراخ، موزاريلا، فلفل ألوان + بصل', tag: 'شواء ع الفحم 🔥' },
+  { id: 'cr-5', no: '٠٥', name: 'كريب فاهيتا', price: 125, desc: 'فاهيتا فراخ، موزاريلا، مشروم، فلفل + بصل', tag: 'فاهيتا مكسيكية' },
+  { id: 'cr-6', no: '٠٦', name: 'كريب شاورما', price: 130, desc: 'شاورما، موزاريلا، تومية', tag: 'تتبيلة مميزة' },
+  { id: 'cr-7', no: '٠٧', name: 'كريب مكس فراخ', price: 140, desc: 'استربس + شيش فراخ، موزاريلا', tag: 'دبل فراخ' },
+  { id: 'cr-8', no: '٠٨', name: 'كريب استيك', price: 150, desc: 'استيك لحم، موزاريلا، مشروم + صوص', tag: 'لحم فاخر' },
+  { id: 'cr-9', no: '٠٩', name: 'كريب جمر الحراق', price: 150, desc: 'برجر سماش، استربس، هالبينو، سويت تشيلي، موزاريلا', tag: 'حار وسماش 🌶️' },
+  { id: 'cr-10', no: '١٠', name: 'كريب مسحب', price: 150, desc: 'مسحب، موزاريلا', tag: 'مقرمش غني' },
+  { id: 'cr-11', no: '١١', name: 'كريب ديناميت', price: 175, desc: 'شيش، فاهيتا ومشروم، استربس، تركي مدخن، صوص شيدر ورانش، موزاريلا', tag: 'ديناميت جمر 💥' },
+  { id: 'cr-12', no: '١٢', name: 'كريب مكس لحوم', price: 185, desc: 'استيك، كفتة مشوية، بسطرمة، روزبيف، صوص شيدر، تكساس صوص، موزاريلا', tag: 'ملوك اللحوم 👑' },
+  { id: 'cr-13', no: '١٣', name: 'كريب جمر (Special)', price: 190, desc: 'فراخ جريلد، استيك، بيف بيكون مدخن، موزاريلا ستيكس', tag: 'توقيع جمر الفاخر ⭐' }
+];
+
+// ============================================================================
+// FEATURED BURGERS MENU DATA (JAMR BURGERS - META AI SHARED SPECIFICATION)
+// ============================================================================
+const burgerCategories = [
+  {
+    catId: 'smash',
+    title: 'برجر سماش لحم (Smash Burgers)',
+    icon: 'fa-fire-burner',
+    desc: 'سماش لحم بلدي طازج مسفوع بنكهة الفحم المدخن مع الجبنة السايحة',
+    items: [
+      {
+        id: 'bg-1',
+        no: '٠١',
+        name: 'برجر سماش',
+        desc: 'سماش لحم، أمريكان تشيز، تكساس صوص، موزريلا سايحة، خس، خيار مخلل',
+        tag: 'الأكثر طلباً 🔥',
+        prices: [
+          { label: 'سنجل', value: 130 },
+          { label: 'دبل', value: 185 },
+          { label: 'تريبل', value: 250 }
+        ]
+      },
+      {
+        id: 'bg-2',
+        no: '٠٢',
+        name: 'اونيون سماش',
+        desc: 'سماش لحم، بصل مكرمل، تكساس صوص، أمريكان تشيز، خيار، خس',
+        tag: 'بصل مكرمل',
+        prices: [
+          { label: 'سنجل', value: 140 },
+          { label: 'دبل', value: 195 },
+          { label: 'تريبل', value: 255 }
+        ]
+      },
+      {
+        id: 'bg-3',
+        no: '٠٣',
+        name: 'بيكون جمر',
+        desc: 'سماش لحم، بيكون مدخن، أمريكان تشيز، صوص جمر',
+        tag: 'مدخّن 🥓',
+        prices: [
+          { label: 'سنجل', value: 150 },
+          { label: 'دبل', value: 205 },
+          { label: 'تريبل', value: 260 }
+        ]
+      }
+    ]
+  },
+  {
+    catId: 'beef-200g',
+    title: 'برجر لحم 200 جم ع الفحم (Flame Grilled Beef)',
+    icon: 'fa-drumstick-bite',
+    desc: 'قطعة لحم 200 جم مشوية على لهب الجمر مع توبينجز فاخرة',
+    items: [
+      {
+        id: 'bg-4',
+        no: '٠٤',
+        name: 'كلاسيك بيكون',
+        desc: 'قطعة لحم 200 جم، بيكون مدخن، أمريكان تشيز، صوص جمر، كوكتيل صوص، طماطم، خس، خيار مخلل، بصل',
+        tag: 'كلاسيك فاخر',
+        prices: [
+          { label: 'سنجل', value: 175 },
+          { label: 'دبل', value: 250 }
+        ]
+      },
+      {
+        id: 'bg-5',
+        no: '٠٥',
+        name: 'تشامبيون برجر',
+        desc: 'قطعة لحم 200 جم، بيف مدخن، بصل مكرمل، قرص موزريلا، اونيون وينجز، أمريكان تشيز، صوص شيدر، سويت شيلي، تفاح مكرمل',
+        tag: 'تشامبيون 🏆',
+        prices: [
+          { label: 'سنجل', value: 215 },
+          { label: 'دبل', value: 270 }
+        ]
+      },
+      {
+        id: 'bg-6',
+        no: '٠٦',
+        name: 'هاواي جمر',
+        desc: 'قطعة لحم 200 جم، أمريكان تشيز، تكساس، أناناس مشوي، صوص جمر',
+        tag: 'نكهة استوائية 🍍',
+        prices: [
+          { label: 'سنجل', value: 250 },
+          { label: 'دبل', value: 320 }
+        ]
+      },
+      {
+        id: 'bg-7',
+        no: '٠٧',
+        name: 'برجر طرب',
+        desc: 'قطعة لحم 200 جم ملفوف طرب، بيف بيكون مدخن، صوص جمر المدخن، تكساس',
+        tag: 'جديد 🆕',
+        prices: [
+          { label: 'سنجل', value: 185 },
+          { label: 'دبل', value: 235 }
+        ]
+      },
+      {
+        id: 'bg-8',
+        no: '٠٨',
+        name: 'برجر مكس تشيز',
+        desc: 'قطعة لحم مكس جبن 200 جم، أمريكان تشيز، هالبينو، رانش صوص، شيدر',
+        tag: 'مكس أجبان 🧀',
+        prices: [
+          { label: 'سنجل', value: 200 },
+          { label: 'دبل', value: 265 }
+        ]
+      },
+      {
+        id: 'bg-9',
+        no: '٠٩',
+        name: 'فاير جمر',
+        desc: 'قطعة لحم 200 جم، سجق مشوي، فراخ جريلد، موزريلا سايحة، بيكون، هالبينو، صوص جمر، أمريكان تشيز، سويت شيلي',
+        tag: 'نار 🔥',
+        prices: [
+          { label: 'قطعة واحدة (VIP)', value: 295 }
+        ]
+      },
+      {
+        id: 'bg-10',
+        no: '١٠',
+        name: 'برجر نوتس',
+        desc: 'قطعة برجر 200 جم، مكسرات وعسل مكرمل، خس وخيار',
+        tag: 'عسل ومكسرات 🍯',
+        prices: [
+          { label: 'قطعة واحدة', value: 195 }
+        ]
+      }
+    ]
+  },
+  {
+    catId: 'chicken-grilled',
+    title: 'برجر تشكن جريلد ع الفحم (Grilled Chicken)',
+    icon: 'fa-fire-flame-simple',
+    desc: 'صدور دجاج طازجة مشوية على الفحم مع صوصات جمر والجبنة',
+    items: [
+      {
+        id: 'bg-11',
+        no: '١١',
+        name: 'تشكن جريلد',
+        desc: 'قطعة جريلد، خس، خيار، باربيكيو، شيدر',
+        tag: 'خفيف ولذيذ',
+        prices: [
+          { label: 'سنجل', value: 140 },
+          { label: 'دبل', value: 175 }
+        ]
+      },
+      {
+        id: 'bg-12',
+        no: '١٢',
+        name: 'جريلد اونيون',
+        desc: 'قطعة جريلد، بصل مكرمل، خيار مخلل، خس، باربيكيو، شيدر',
+        tag: 'بصل مكرمل',
+        prices: [
+          { label: 'سنجل', value: 155 },
+          { label: 'دبل', value: 185 }
+        ]
+      },
+      {
+        id: 'bg-13',
+        no: '١٣',
+        name: 'جريلد ماش',
+        desc: 'قطعة فراخ جريلد، مشروم، خيار مخلل، خس، شيدر، باربيكيو',
+        tag: 'مشروم غني 🍄',
+        prices: [
+          { label: 'سنجل', value: 160 },
+          { label: 'دبل', value: 195 }
+        ]
+      }
+    ]
+  },
+  {
+    catId: 'chicken-crispy',
+    title: 'فرايد تشكن واسكالوب (Fried & Crispy Chicken)',
+    icon: 'fa-drumstick-bite',
+    desc: 'دجاج مقرمش ذهبي مع طبقات الموزاريلا والتركي المدخن',
+    items: [
+      {
+        id: 'bg-14',
+        no: '١٤',
+        name: 'شامبيون جمر',
+        desc: 'قطعة فرايد تشيكن، قرص موزريلا، اونيون رينجز، مشروم صوص، تركي مدخن، هالبينو، كرامليز تفاح، رانش، تكساس، صوص جمر',
+        tag: 'شامبيون كرسبي 🏆',
+        prices: [
+          { label: 'سنجل', value: 195 },
+          { label: 'دبل', value: 255 }
+        ]
+      },
+      {
+        id: 'bg-15',
+        no: '١٥',
+        name: 'فرايد كلاسيك',
+        desc: 'قطعة فرايد، تركي مدخن، بصل، خس، خيار مخلل، رانش، شيدر، كوكتيل صوص',
+        tag: 'كرسبي كلاسيك',
+        prices: [
+          { label: 'سنجل', value: 155 },
+          { label: 'دبل', value: 195 }
+        ]
+      },
+      {
+        id: 'bg-16',
+        no: '١٦',
+        name: 'نوتس جمر تشكن',
+        desc: 'قطعة فرايد، مكسرات وعسل مكرمل، تفاح كرمليز، خيار مخلل، خس',
+        tag: 'عسل وتفاح 🍏',
+        prices: [
+          { label: 'قطعة واحدة', value: 185 }
+        ]
+      },
+      {
+        id: 'bg-17',
+        no: '١٧',
+        name: 'اسكالوب بيب',
+        desc: 'قطعة اسكالوب، بصل مكرمل، بيبيروني، جبنة سايحة بفلفل ألوان، خيار وخس',
+        tag: 'بيبيروني وجبن 🍕',
+        prices: [
+          { label: 'سنجل', value: 170 },
+          { label: 'دبل', value: 215 }
+        ]
+      }
+    ]
   }
 ];
 
@@ -185,6 +429,100 @@ function orderPastaDirect(dishId, dishName, price) {
 }
 
 // ============================================================================
+// RENDER CREPES MENU (JAMR 13 CREPES)
+// ============================================================================
+function renderCrepesMenu() {
+  const container = document.getElementById('crepes-grid');
+  if (!container) return;
+
+  container.innerHTML = crepesData.map(cr => `
+    <div class="crepe-card" data-crepe-id="${cr.id}">
+      <div>
+        <div class="crepe-card-top">
+          <div class="crepe-no-badge">${cr.no}</div>
+          <span class="crepe-tag">${cr.tag}</span>
+          <div class="crepe-price-badge">${cr.price} <span>ج.م</span></div>
+        </div>
+        <h4 class="crepe-title">${cr.name}</h4>
+        <p class="crepe-desc">${cr.desc}</p>
+      </div>
+      <button class="btn-order-crepe" onclick="orderCrepeDirect('${cr.name}', ${cr.price})">
+        <i class="fab fa-whatsapp"></i> اطلب هذا الكريب واتساب
+      </button>
+    </div>
+  `).join('');
+}
+
+function orderCrepeDirect(crepeName, price) {
+  const msg = `مرحباً مطعم جمر (قليوب)، أود طلب كريب:\n` +
+              `🌯 *الصنف:* ${crepeName}\n` +
+              `💰 *السعر:* ${price} جنيه مصري\n` +
+              `يرجى تأكيد الاستلام والتوصيل في قليوب.`;
+  const waUrl = `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
+}
+
+// ============================================================================
+// RENDER BURGERS MENU (JAMR 17 BURGERS ACROSS 4 SECTIONS)
+// ============================================================================
+function renderBurgersMenu() {
+  const container = document.getElementById('burgers-sections-container');
+  if (!container) return;
+
+  container.innerHTML = burgerCategories.map(cat => `
+    <div class="burger-category-block">
+      <div class="burger-category-header">
+        <div class="burger-cat-icon"><i class="fas ${cat.icon}"></i></div>
+        <div>
+          <h3 class="burger-cat-title">${cat.title}</h3>
+          <p class="burger-cat-desc">${cat.desc}</p>
+        </div>
+      </div>
+      <div class="burgers-grid">
+        ${cat.items.map(bg => `
+          <div class="burger-card" data-burger-id="${bg.id}">
+            <div>
+              <div class="burger-card-top">
+                <span class="burger-no">${bg.no}</span>
+                <span class="burger-tag">${bg.tag}</span>
+              </div>
+              <h4 class="burger-title">${bg.name}</h4>
+              <p class="burger-desc">${bg.desc}</p>
+              
+              <div class="burger-prices-box">
+                <div class="burger-prices-label"><i class="fas fa-tag"></i> الأحجام والأسعار (اضغط للطلب):</div>
+                <div class="burger-prices-row">
+                  ${bg.prices.map(p => `
+                    <div class="burger-price-chip" onclick="orderBurgerDirect('${bg.name}', '${p.label}', ${p.value})" title="طلب ${bg.name} (${p.label})">
+                      <span class="chip-label">${p.label}</span>
+                      <span class="chip-value">${p.value} <sub>ج</sub></span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-order-burger" onclick="orderBurgerDirect('${bg.name}', '${bg.prices[0].label}', ${bg.prices[0].value})">
+              <i class="fab fa-whatsapp"></i> اطلب الآن (${bg.prices[0].label}: ${bg.prices[0].value} ج)
+            </button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function orderBurgerDirect(burgerName, sizeLabel, price) {
+  const msg = `مرحباً مطعم جمر (قليوب)، أود طلب برجر:\n` +
+              `🍔 *البرجر:* ${burgerName}\n` +
+              `📏 *الحجم:* ${sizeLabel}\n` +
+              `💰 *السعر:* ${price} جنيه مصري\n` +
+              `يرجى تأكيد الاستلام والتوصيل في قليوب.`;
+  const waUrl = `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
+}
+
+// ============================================================================
 // EMBER CANVAS
 // ============================================================================
 function initEmberCanvas() {
@@ -283,11 +621,18 @@ function renderCategories() {
 
 // Pre-fill selection
 function selectCategoryForOrder(categoryName) {
-  if (categoryName && categoryName.includes('باستا')) {
-    const pastaSection = document.getElementById('pasta-menu');
-    if (pastaSection) {
-      pastaSection.scrollIntoView({ behavior: 'smooth' });
-      return;
+  if (categoryName) {
+    if (categoryName.includes('برجر')) {
+      const el = document.getElementById('burgers-menu');
+      if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; }
+    }
+    if (categoryName.includes('كريب')) {
+      const el = document.getElementById('crepes-menu');
+      if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; }
+    }
+    if (categoryName.includes('باستا')) {
+      const el = document.getElementById('pasta-menu');
+      if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; }
     }
   }
 
@@ -360,6 +705,8 @@ function setupStickyHeader() {
 document.addEventListener('DOMContentLoaded', () => {
   initEmberCanvas();
   renderCategories();
+  renderBurgersMenu();
+  renderCrepesMenu();
   renderPastaMenu();
   setupStickyHeader();
 

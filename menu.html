@@ -68,6 +68,15 @@
           استمتع بأصالة المشويات التركية على فحم السنديان الطبيعي، وألذ تشكيلة فاست فود في قليوب: كريب مقرمش، برجر مشوي
           بجبنة شيدر سايحة، وباستا إيطالية غنية بالوايت صوص. اختر القسم واطلب فوراً عبر الواتساب.
         </p>
+
+        <!-- Quick Jump Navigation Tabs -->
+        <div class="quick-jump-nav">
+          <a href="#categories-grid" class="quick-jump-btn"><i class="fas fa-fire-flame-curved"></i> المشويات والصواني</a>
+          <a href="#burgers-menu" class="quick-jump-btn"><i class="fas fa-burger"></i> منيو البرجر (١٧ صنف)</a>
+          <a href="#crepes-menu" class="quick-jump-btn"><i class="fas fa-scroll"></i> منيو الكريب (١٣ صنف)</a>
+          <a href="#pasta-menu" class="quick-jump-btn"><i class="fas fa-plate-wheat"></i> منيو الباستا (٧ أطباق)</a>
+          <a href="#order" class="quick-jump-btn" style="color: var(--fire-gold);"><i class="fab fa-whatsapp"></i> طلب دليفري سريع</a>
+        </div>
       </div>
     </div>
 
@@ -79,6 +88,52 @@
         <!-- Rendered dynamically by JS -->
         <div class="categories-grid" id="categories-grid">
           <!-- Populated by JS -->
+        </div>
+
+        <!-- ===================================================================
+             FEATURED BURGERS MENU (منيو برجر جمر ع الفحم • سماش)
+             =================================================================== -->
+        <div class="burger-menu-wrapper" id="burgers-menu">
+          <div class="burger-header-box">
+            <div class="burger-header-pill">
+              <i class="fas fa-burger"></i>
+              <span>لحم بلدي 100% • مشوي ع الفحم وسماش • ١٧ صنف</span>
+            </div>
+            <h2 class="burger-header-title gold-gradient-text">منيو برجر جمر ع الفحم (Burgers)</h2>
+            <p class="burger-header-desc">
+              سماش برجر ولحم 200 جم مشوي على لهب الفحم، وتشكن جريلد وفرايد كرسبي مع صوصات جمر الحصرية والجبنة السايحة. اضغط على أي حجم وسعر للطلب الفوري.
+            </p>
+          </div>
+
+          <div id="burgers-sections-container">
+            <!-- Populated dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             FEATURED CREPES MENU (منيو كريب جمر المقرمش)
+             =================================================================== -->
+        <div class="crepe-menu-wrapper" id="crepes-menu">
+          <div class="crepe-header-box">
+            <div class="crepe-header-pill">
+              <i class="fas fa-scroll"></i>
+              <span>طعم على نار هادية • قليوب • ١٣ صنف</span>
+            </div>
+            <h2 class="crepe-header-title gold-gradient-text">منيو كريب جمر الفاخر (Crepes)</h2>
+            <p class="crepe-header-desc">
+              كريب مقرمش محشو بأجود قطع اللحوم والفراخ والأجبان السايحة. اختر كريبك المفضل واطلب فوراً لباب بيتك.
+            </p>
+          </div>
+
+          <!-- Free Add-ons Banner -->
+          <div class="crepe-free-addons-banner">
+            <i class="fas fa-gift"></i>
+            <span>كل الكريبات فيها إضافات ثابتة مجانية: فلفل + زيتون + كاتشب + مايونيز + صوص شيدر</span>
+          </div>
+
+          <div class="crepes-grid" id="crepes-grid">
+            <!-- Populated dynamically by JS -->
+          </div>
         </div>
 
         <!-- ===================================================================
@@ -180,7 +235,7 @@
                 <span>تفاصيل طلبك من المشويات والتخصصات:</span>
               </label>
               <textarea id="order-items-input" rows="4" class="form-input"
-                placeholder="اكتب طلبك من المشويات التركية أو الفاست فود (مثال: كباب تركي، شيش طاووق، كريب كرسبي سوبريم، برجر جمر دبل تشيز، باستا وايت صوص بالموتزاريلا...)"
+                placeholder="اكتب طلبك (مثال: برجر سماش دبل 185 ج، كريب ديناميت 175 ج، كريب جمر 190 ج، باستا سي فود 210 ج، كباب تركي ع الفحم...)"
                 required></textarea>
             </div>
 
